@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="menu">
+        <button data-menu="sala" class="button-menu sala">Sala/Cozinha</button>
+        <button data-menu="suite" class="button-menu suite">Suíte</button>
+        <button data-menu="banheiro" class="button-menu banheiro">Banheiro</button>
+        <button data-menu="garagem" class="button-menu cozinha">Garagem</button>
+    </div>
+    <div class="controls">
+
+        <div class="controle sala">
+            <label for="ledSala1" data-firebase="salaLed1" class="label-led">
+                Lâmpada 1
+                <div class="on-off-container">
+                    <p class="off-text">off</p>
+                    <span class="on-off-switch"></span>
+                    <p class="on-text">on</p>
+                </div>
+                <input id="ledSala1" type="checkbox" class="led">
+            </label>
+
+            <label for="displayLed" class="label-display">
+                Canal de TV<input id="displayLed" type="number" class="display">
+                <button class="canal send">Trocar canal</button>
+            </label>
+
+            <label for="ledSala2" data-firebase="salaLed2" class="label-led">
+                Lâmpada 2
+                <div class="on-off-container">
+                    <p class="off-text">off</p>
+                    <span class="on-off-switch"></span>
+                    <p class="on-text">on</p>
+                </div>
+                <input id="ledSala2" type="checkbox" class="led">
+            </label>
+
+            <label for="ledSala3" data-firebase="salaLed3" data-firebase="ledSala3" class="label-led">
+                Lâmpada 3
+                <div class="on-off-container">
+                    <p class="off-text">off</p>
+                    <span class="on-off-switch"></span>
+                    <p class="on-text">on</p>
+                </div>
+                <input id="ledSala3" type="checkbox" class="led">
+            </label>
+
+            <label for="porta" data-firebase="salaPorta" class="label-led ">
+                Porta
+                <div class="on-off-container">
+                    <p class="off-text">Close</p>
+                    <span class="on-off-switch"></span>
+                    <p class="on-text">Open</p>
+                </div>
+                <input id="porta" type="checkbox" class="led">
+            </label>
+
+            <label for="ledSala4" data-firebase="salaLed4" class="label-led">
+                Lâmpada 4
+                <div class="on-off-container">
+                    <p class="off-text">off</p>
+                    <span class="on-off-switch"></span>
+                    <p class="on-text">on</p>
+                </div>
+                <input id="ledSala4" type="checkbox" class="led" />
+            </label>
+        </div>
+
+        <div class="controle suite">
+            <label for="janela" data-firebase="suiteJanela" class="label-led">
+                Janela
+                <div class="on-off-container">
+                    <p class="off-text">Close</p>
+                    <span class="on-off-switch"></span>
+                    <p class="on-text">Open</p>
+                </div>
+                <input id="janela" type="checkbox" class="led">
+            </label>
+
+            <label for="ledSuite" data-firebase="suiteLed" class="label-display">
+                Lâmpada
+                <div class="on-off-container">
+                    <p class="off-text">off</p>
+                    <span class="on-off-switch"></span>
+                    <p class="on-text">on</p>
+                </div>
+                <input id="ledSuite" type="checkbox" class="display">
+            </label>
+        </div>
+
+        <div class="controle banheiro">
+
+            <label for="chuveiro" data-firebase="banheiroChuveiro" class="label-led">
+                Chuveiro
+                <div class="on-off-container">
+                    <p class="off-text">off</p>
+                    <span class="on-off-switch"></span>
+                    <p class="on-text">on</p>
+                </div>
+            </label>
+            <label for="displayLed" class="label-display">
+                Temperatura
+                <input id="chuveiro" min="0" max="40" type="checkbox" class="display">
+                <input id="chuveiroTemperatura" type="number" class="led">
+                <input id="displayLed" type="number" class="temperatura">
+                <button class="temperatura send">Trocar temperatura</button>
+            </label>
+
+            <label for="ledBanheiro" data-firebase="banheiroLed" class="label-display">
+                Lâmpada
+                <div class="on-off-container">
+                    <p class="off-text">off</p>
+                    <span class="on-off-switch"></span>
+                    <p class="on-text">on</p>
+                </div>
+                <input id="ledBanheiro" type="checkbox" class="display">
+            </label>
+
+        </div>
+
+        <div class="controle garagem">
+
+            <label for="portao" data-firebase="garagemPortao" class="label-display">
+                Portão
+                <div class="on-off-container">
+                    <p class="off-text">Close</p>
+                    <span class="on-off-switch"></span>
+                    <p class="on-text">Open</p>
+                </div>
+                <input id="portao" type="checkbox" class="display">
+            </label>
+
+        </div>
+    </div>
+    <!-- <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script> -->
+    <script src="script.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-database.js"></script>
+</body>
+
+</html>
+<!-- 
+    Banheiro: Chuveiro, led
+    Suite: Led, TV, Cortina
+    Cozinha: Led
+    Sala: Porta, Display Led, Led 
+-->
