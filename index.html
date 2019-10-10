@@ -10,6 +10,20 @@
 </head>
 
 <body>
+    <div class="estado-casa">
+            <span class="estado temperatura">
+                <p class="temp">Temperatura da casa</p>
+                <p class="temp-number">
+                    Carregando...
+                </p>
+            </span>
+            <span class="estado umidade">
+                <p class="umidade">Umidade do ar</p>
+                <p class="umidade-number">
+                    Carregando...
+                </p>
+            </span>
+        </div>
     <div class="menu">
         <button data-menu="sala" class="button-menu sala">Sala/Cozinha</button>
         <button data-menu="suite" class="button-menu suite">Suíte</button>
@@ -18,7 +32,7 @@
     </div>
     <div class="controls">
 
-        <div class="controle sala">
+        <div class="controle sala is--active">
             <label for="ledSala1" data-firebase="salaLed1" class="label-led">
                 Lâmpada 1
                 <div class="on-off-container">
@@ -142,6 +156,8 @@
 
         </div>
     </div>
+
+
     <!-- <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script> -->
     <script src="script.js"></script>
     <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>

@@ -18,34 +18,50 @@ const Methods = {
 
     var database = firebase.database();
 
+    var umidade = firebase.database().ref('salaTv');
+    umidade.on('value', function (snapshot) {
+      const umidade = document.querySelector('.umidade-number');
+      umidade.textContent = snapshot.val();
+    });
+
+    var temperatura = firebase.database().ref('banheiroTemperatura');
+    temperatura.on('value', function (snapshot) {
+      const temperatura = document.querySelector('.temp-number');
+      temperatura.textContent = snapshot.val();
+    });
+
     function updateOnOff() {
       const labels = document.querySelectorAll('.label-led');
       labels.forEach(label => {
         label.addEventListener('click', function () {
           this.childNodes.forEach(child => {
-            if(child.tagName == "INPUT") {
+            if (child.tagName == "INPUT") {
               child.checked ? database.ref(this.getAttribute('data-firebase')).set(1) : database.ref(this.getAttribute('data-firebase')).set(0);
             }
           })
-          
+
         })
       })
     }
 
     function updateCanal() {
       const btn = document.querySelector('.canal.send');
-      btn.addEventListener('click', function() {
+      btn.addEventListener('click', function () {
         const valueTxt = document.querySelector('.display').value;
-        console.log(valueTxt)
-        database.ref("salaTv").set("Canal "+valueTxt);
+        database.ref("salaTv").set(valueTxt);
       })
     }
+    var canal = firebase.database().ref('salaTv');
+    canal.on('value', function (snapshot) {
+      const valueTxt = document.querySelector('.display');
+      valueTxt.setAttribute("value", snapshot.val());
+    });
 
     function updateTemperatura() {
       const btn = document.querySelector('.temperatura.send');
       btn.addEventListener('click', () => {
         const valueTxt = document.querySelector('.temperatura').value;
-        database.ref("banheiroTemperatura").set(valueTxt+"º");
+        database.ref("banheiroTemperatura").set(valueTxt + "º");
       })
     }
     updateCanal();
