@@ -108,7 +108,12 @@ input[type="checkbox"] {
     padding: 5px;
     background-color: cornsilk;
     color: #000;
-    border: 1px solid #000
+    border: 1px solid #000;
+    box-shadow: inset 0px 1px 0px #9e8d84, 0px 2px 0px 0px #322629, 0px 5px 3px #999;
+}
+.send:active{
+    box-shadow: none;
+    margin-bottom: 2px;
 }
 label.is--active .on-off-switch:before {
     left: 50px;

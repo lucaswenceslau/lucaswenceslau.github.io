@@ -30,7 +30,7 @@
             </label>
 
             <label for="displayLed" class="label-display">
-                Canal de TV<input id="displayLed" type="number" class="display">
+                Canal de TV<input id="displayLed" type="number" class="display" min="0" max="5">
                 <button class="canal send">Trocar canal</button>
             </label>
 
@@ -112,8 +112,8 @@
             <label for="temperatura" class="label-display">
                 Temperatura
                 <input id="chuveiroTemperatura" type="number" class="led">
-                <input id="temperatura" type="number" class="temperatura">
-                <button class="temperatura send">Trocar temperatura</button>
+                <input id="temperatura" type="number" class="temperatura" min="0" max="40">
+                <button class="temperatura send">temperatura</button>
             </label>
 
             <label for="ledBanheiro" data-firebase="banheiroLed" class="label-led">

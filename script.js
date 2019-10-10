@@ -34,18 +34,18 @@ const Methods = {
 
     function updateCanal() {
       const btn = document.querySelector('.canal.send');
-      const valueTxt = document.querySelector('.display').value;
       btn.addEventListener('click', function() {
-        console.log(database.ref("salaTv"))
-        database.ref("salaTv").set(valueTxt);
+        const valueTxt = document.querySelector('.display').value;
+        console.log(valueTxt)
+        database.ref("salaTv").set("Canal "+valueTxt);
       })
     }
 
     function updateTemperatura() {
       const btn = document.querySelector('.temperatura.send');
-      const valueTxt = document.querySelector('.temperatura').value;
       btn.addEventListener('click', () => {
-        database.ref("banheiroTemperatura").set(valueTxt);
+        const valueTxt = document.querySelector('.temperatura').value;
+        database.ref("banheiroTemperatura").set(valueTxt+"º");
       })
     }
     updateCanal();
